@@ -7,7 +7,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     menus: menuConfig,
-    role: "admin"
+    role: "normal"
   },
   mutations: {
     addRoute(state, payload) {
