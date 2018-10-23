@@ -21,6 +21,7 @@ const menuConfig = [
     route: {
       path: "/user",
       name: "user",
+      meta: { role: "admin" },
       component: UserIndex,
       children: [
         {
@@ -42,6 +43,8 @@ const menuConfig = [
   }
 ];
 
+export { menuConfig };
+
 // 不想显示的路由
 const noShowRoute = [];
 
@@ -50,8 +53,8 @@ const routes = menuConfig
   .filter(Boolean)
   .concat(noShowRoute);
 
-export default new Router({
-  routes,
-})
+const router = new Router({
+  routes
+});
 
-export { menuConfig };
+export default router;
