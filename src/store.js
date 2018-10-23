@@ -8,6 +8,11 @@ export default new Vuex.Store({
   state: {
     menus: menuConfig
   },
-  mutations: {},
+  mutations: {
+    addRoute(state, payload) {
+      state.menus = state.menus.concat(payload);
+      return state;
+    }
+  },
   actions: {}
 });

@@ -9,8 +9,6 @@ Vue.use(Antd);
 
 Vue.config.productionTip = false;
 
-console.log(router); // eslint-disable-line
-
 new Vue({
   router,
   store,
