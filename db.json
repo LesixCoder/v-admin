@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "name": "liusixin",
+      "roles": ["admin", "member"],
+      "permissions": ["user-list", "user-create", "user-delete", "user-update"],
+      "password": "123456",
+      "avatar": "https://avatars3.githubusercontent.com/u/16339899?s=400&u=40a18966f42efe1b76ebdf5db36ec0787d2d1630&v=4"
+    },
+    {
+      "name": "xl",
+      "roles": ["member"],
+      "permissions": ["user-list"],
+      "password": "123456",
+      "avatar": "https://avatars2.githubusercontent.com/u/644260?s=460&v=4"
+    }
+  ]
+}
