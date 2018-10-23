@@ -1,7 +1,14 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <a-breadcrumb style="margin: 16px 0">
+      <a-breadcrumb-item>User</a-breadcrumb-item>
+      <a-breadcrumb-item>Bill</a-breadcrumb-item>
+    </a-breadcrumb>
+    <div class="home" :style="{ padding: '24px', background: '#fff', minHeight: '360px' }">
+      <img alt="Vue logo" src="../assets/logo.png">
+      <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <p>Bill is a cat.</p>
+    </div>
   </div>
 </template>
 
