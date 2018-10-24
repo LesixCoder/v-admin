@@ -4,8 +4,11 @@ import router from "./router";
 import store from "./store";
 import Antd from "ant-design-vue";
 import "ant-design-vue/dist/antd.css";
+import axios from "axios";
+import VueAxios from "vue-axios";
 
 Vue.use(Antd);
+Vue.use(VueAxios, axios);
 
 Vue.config.productionTip = false;
 
