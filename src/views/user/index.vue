@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  
+  name: 'user-index-view'
 }
 </script>
 

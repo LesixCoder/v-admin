@@ -10,7 +10,9 @@
           <my-menu></my-menu>
         </a-layout-sider>
         <a-layout :style="{ marginLeft: '200px' }">
-          <a-layout-header style="background: #fff; padding: 0" />
+          <a-layout-header style="background: #fff; padding: 0 16px">
+            <a-tag v-for="tag in openTags" closable @click="backUrl(tag.path)" @close="closeTag(tag.path, $event)" :key="tag.path">{{ tag.text }}</a-tag>
+          </a-layout-header>
           <a-layout-content style="margin: 0 16px">
             <a-breadcrumb style="margin: 16px 0">
               <a-breadcrumb-item v-for="breadcrumb in breadcrumbs" :key="breadcrumb.name"> 
@@ -22,7 +24,11 @@
                 </template>
               </a-breadcrumb-item>
             </a-breadcrumb>
-            <router-view></router-view>
+            <!-- <router-view></router-view> -->
+            <!-- 子路由里面的 router-view 管不着 -->
+            <keep-alive :exclude="['user-list-view']">
+              <router-view></router-view>
+            </keep-alive>
           </a-layout-content>
           <a-layout-footer style="text-align: center">
             Ant Design ©2018 Created by Ant UED
@@ -36,6 +42,7 @@
 <script>
 import MyMenu from "@/components/MyMenu.vue";
 import zhCN from 'ant-design-vue/lib/locale-provider/zh_CN';
+import { mapState } from "vuex";
 
 export default {
   name: 'app',
@@ -49,9 +56,19 @@ export default {
       locale: zhCN,
     }
   },
+  computed: mapState(['openTags']),
   watch: {
     '$route': function(to, from){ // eslint-disable-line
       this.breadcrumbs = to.matched.map(route => ({name: route.name, ...route.meta}))
+    }
+  },
+  methods: {
+    closeTag(path, e) {
+      e.preventDefault()
+      this.$store.commit('removeTag', path);
+    },
+    backUrl(path){
+      this.$router.push(path);
     }
   }
 }

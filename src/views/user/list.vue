@@ -102,6 +102,7 @@
 
 <script>
 export default {
+  name: 'user-list-view',
   data() {
     return {
       data: [],
@@ -115,6 +116,9 @@ export default {
       searchText: "",
       filtered: false
     };
+  },
+  activated(){
+    console.log('trigger user-list-view keep alive hook'); // eslint-disable-line
   },
   mounted() {
     this.fetch();
