@@ -5,10 +5,11 @@
         <a-layout-sider
           collapsible
           v-model="collapsed"
+          :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }"
         >
           <my-menu></my-menu>
         </a-layout-sider>
-        <a-layout>
+        <a-layout :style="{ marginLeft: '200px' }">
           <a-layout-header style="background: #fff; padding: 0" />
           <a-layout-content style="margin: 0 16px">
             <a-breadcrumb style="margin: 16px 0">
