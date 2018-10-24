@@ -27,3 +27,5 @@ npm run serve
 # 构建
 npm run build
 ```
+
+用户列表接口使用 [randomuser](https://randomuser.me/)
